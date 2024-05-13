@@ -26,3 +26,15 @@ docker run -d -p 8080:8080 --name nazwa_kontenera nazwa:tag
 ```
 
 ![image](https://github.com/N33Qu/ZAD1/assets/116431498/8b2ff7d3-7e32-4d51-9eeb-3a8fc91ecfba)
+
+### Działanie aplikacji:
+
+![image](https://github.com/N33Qu/ZAD1/assets/116431498/5504a02f-d4ef-40c1-a7d4-cc2bb1a76007)
+
+![image](https://github.com/N33Qu/ZAD1/assets/116431498/ccf01f44-5485-4989-8124-e689f89f736c)
+
+![image](https://github.com/N33Qu/ZAD1/assets/116431498/c036a737-b50a-4d97-86d5-2b5e155864ea)
+
+### Sprawdzenie docker scout:
+
+![image](https://github.com/N33Qu/ZAD1/assets/116431498/ed83e65a-4434-4300-90d2-9b3e8847b698)
