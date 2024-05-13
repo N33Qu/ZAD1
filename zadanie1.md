@@ -55,3 +55,14 @@ docker scout cves --platform linux nazwa:tag
 ### Link do Docker Hub z obrazem:
 
 https://hub.docker.com/layers/neeqoo/lab/zad1_Go/images/sha256-0f6d2466e878b70de3d0511ac0412c351dde1f4ac38c6fd7ffae3334bcab53a8?context=repo
+
+## Aplikacja w Pythonie
+
+Aplikacja działa tak samo, ale posiada problem z pakietem pip, w którym występuje błąd o ocenie CVSS w wysokości 7.8:
+
+![Screenshot 2024-05-13 135211](https://github.com/N33Qu/ZAD1/assets/116431498/f26cb690-84c8-4c05-9074-017d8d3e2281)
+
+
+
+
+
