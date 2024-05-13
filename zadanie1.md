@@ -48,6 +48,9 @@ docker scout cves --platform linux neeqoo/lab:zad1_Go
 
 ![image](https://github.com/N33Qu/ZAD1/assets/116431498/d8a3ce8c-7eb5-4a24-995a-1899e895ab89)
 
+### *Rozmiar obrazu:
+
+![image](https://github.com/N33Qu/ZAD1/assets/116431498/a00272fe-5ad7-4350-9f3c-d2ada26f09c4)
 
 ### Link do Docker Hub z obrazem:
 
