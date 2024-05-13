@@ -38,3 +38,11 @@ docker run -d -p 8080:8080 --name nazwa_kontenera nazwa:tag
 ### Sprawdzenie docker scout:
 
 ![image](https://github.com/N33Qu/ZAD1/assets/116431498/ed83e65a-4434-4300-90d2-9b3e8847b698)
+
+### Linki do Docker Hub-a:
+
+Zad1_dodL:
+https://hub.docker.com/layers/neeqoo/lab/zad1_dod/images/sha256-fb815d4a700d270c8cccb4eefc8fd47cdf2e68e35c17f053a4b3cf16ad7b300f?context=repo
+
+Zad1_cache:
+https://hub.docker.com/layers/neeqoo/lab/zad1_cache/images/sha256-d4ed9230d7cf2756e03ad117668a032d017f3d2baeaa94a9c3cf23044d4475af?context=repo
