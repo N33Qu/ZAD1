@@ -1,23 +1,27 @@
 # Stage 1: Budowanie aplikacji
-FROM golang:1.17 AS builder
-
-# Ustawienie środowiska
-ENV CGO_ENABLED=0 \
-    GOOS=linux \
-    GOARCH=amd64
-
+FROM golang:latest AS builder
 
 WORKDIR /app
 
-COPY go.mod .
+RUN mkdir -p /clonedRepo
+RUN --mount=type=secret,id=ghlab_access \
+    mkdir -p ~/.ssh && \
+    cp /run/secrets/ghlab_access ~/.ssh/id_rsa && \
+    chmod 600 ~/.ssh/id_rsa && \
+    ssh-keyscan github.com >> ~/.ssh/known_hosts &&  \
+    git clone git@github.com:N33Qu/ZAD1.git clonedRepo
+
+RUN mv ./clonedRepo/Dodatkowe/go.mod .
 RUN go mod download
 
-COPY .. .
+RUN mv ./clonedRepo/Dodatkowe/* .
 
 RUN go build -o server .
 
+RUN ls -la
+
 # Budowanie projektu React
-FROM node:14 AS frontend-builder
+FROM node:22.1-alpine3.18 AS frontend-builder
 
 WORKDIR /app
 
@@ -25,7 +29,7 @@ RUN npx create-react-app frontend
 
 WORKDIR /app/frontend
 
-COPY frontend/src ./src
+COPY --from=builder ../app/frontend/src ./src
 
 RUN npm run build
 
@@ -34,10 +38,12 @@ FROM alpine:latest
 
 WORKDIR /app
 
-COPY --from=builder /app/server /server
+COPY --from=builder /app/server ./server
 
 COPY --from=frontend-builder /app/frontend/build ./frontend
 
-COPY index.html /app/frontend
+COPY --from=builder app/index.html /app/frontend
 
-CMD ["/server"]
+RUN ls -la
+
+CMD ["./server"]
