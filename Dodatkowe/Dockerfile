@@ -1,6 +1,10 @@
 # Stage 1: Budowanie aplikacji
 FROM golang:latest AS builder
 
+ENV CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=amd64
+    
 WORKDIR /app
 
 COPY go.mod .
