@@ -7,7 +7,7 @@ Ten projekt zawiera kod źródłowy i plik Dockerfile potrzebny do zbudowania ob
 ### Aby zbudować obraz kontenera, wykonaj następujące polecenie w katalogu głównym projektu:
 
 ```bash
-docker buildx build -f Dockerfile -t neeqoo/lab:zad1_Go --sbom=true --provenance=mode=max --push .
+docker build -t nazwa:tag .
 ```
 
 ![image](https://github.com/N33Qu/ZAD1/assets/116431498/0a675f1a-79f3-4a34-9e3d-060ee0776b27)
@@ -15,7 +15,7 @@ docker buildx build -f Dockerfile -t neeqoo/lab:zad1_Go --sbom=true --provenance
 ### Aby uruchomić kontener na podstawie zbudowanego obrazu, należy wykonać polecenie:
 
 ```bash
-docker run -d -p 8080:8080 --name nazwa_kontenera neeqoo/lab:zad1_Go
+docker run -d -p port_zewnętrzny:port_wewnętrzny nazwa:tag
 ```
 
 ![image](https://github.com/N33Qu/ZAD1/assets/116431498/d259941b-c1c8-4ce7-9e92-de4b9c042e5a)
@@ -31,7 +31,7 @@ docker logs nazwa_kontenera
 ### Aby sprawdzić ile warst posiada zbudowany obraz, należy użyć polecenia:
 
 ```bash
-docker history neeqoo/lab:zad1_Go
+docker history nazwa:tag
 ```
 
 ![image](https://github.com/N33Qu/ZAD1/assets/116431498/85c3d5bd-b79a-444a-a4ad-2cdb06a2e53a)
@@ -39,7 +39,7 @@ docker history neeqoo/lab:zad1_Go
 ### Sprawdzenie czy żadne składow obrazu nie uzysjkują oceny CVSS większej od 7.0:
 
 ```bash
-docker scout cves --platform linux neeqoo/lab:zad1_Go
+docker scout cves --platform linux nazwa:tag
 ```
 
 ![image](https://github.com/N33Qu/ZAD1/assets/116431498/fd7eb7c7-9fff-47b4-b953-e5542e8d540f)
