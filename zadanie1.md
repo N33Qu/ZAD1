@@ -60,7 +60,8 @@ https://hub.docker.com/layers/neeqoo/lab/zad1_Go/images/sha256-0f6d2466e878b70de
 
 Aplikacja działa tak samo, ale posiada problem z pakietem pip, w którym występuje błąd o ocenie CVSS w wysokości 7.8:
 
-![Screenshot 2024-05-13 135211](https://github.com/N33Qu/ZAD1/assets/116431498/f26cb690-84c8-4c05-9074-017d8d3e2281)
+![Screenshot 2024-05-13 135211](https://github.com/N33Qu/ZAD1/assets/116431498/19fc8983-5d77-4309-a2cf-0fa3b87d8e3c)
+
 
 
 
