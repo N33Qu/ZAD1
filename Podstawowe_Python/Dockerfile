@@ -1,9 +1,8 @@
 #Wybrany obraz
-FROM python:3.5-alpine3.12
+FROM python:3.12.3-alpine3.19
 
 #Dodanie etykiet
 LABEL author="Mikolaj Stasz"
-
 
 # Kopiowanie plików aplikacji do kontenera
 COPY server.py /app/
