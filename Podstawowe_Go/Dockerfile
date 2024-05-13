@@ -19,5 +19,12 @@ FROM scratch
 # Kopiowanie binarnej aplikacji z poprzedniego etapu
 COPY --from=builder /app/server /server
 
+#Doadanie etykiety z imieniem i nazwiskiem autora
+LABEL author="Mikolaj Stasz"
+
+#Przeprowadzenie healthcheck
+HEALTHCHECK --interval=10s --timeout=1s \
+ CMD curl -f http://localhost:8080/ || exit 1
+
 # Uruchomienie serwera HTTP
 CMD ["/server"]
